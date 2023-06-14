@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Task Book
-Plugin URI:  https://linkedin.com/learning
+Plugin URI:  https://github.com/hetvi11110/headless-wordpress/tree/master/app/public/wp-content/plugins/taskbook
 Description: Track stress and anxiety levels around tasks.
 Version:     1.0.0
-Author:      Morten Rand-Hendriksen
-Author URI:  https://mor10.com
+Author:      Hetvi Patel
+Author URI:  https://profiles.wordpress.org/hetvi11110/
 Text Domain: taskbook
 Domain Path: /languages
 License:     GPL3
@@ -44,3 +44,8 @@ register_deactivation_hook( __FILE__, 'taskbook_remove_role' );
  */
 require_once plugin_dir_path( __FILE__ ) . 'includes/status.php';
 
+/**
+ * Add capabilities.
+ */
+register_activation_hook( __FILE__, 'taskbook_add_capabilities' );
+register_deactivation_hook( __FILE__, 'taskbook_remove_capabilities' );

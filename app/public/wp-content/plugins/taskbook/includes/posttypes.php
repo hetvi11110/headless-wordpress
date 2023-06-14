@@ -15,8 +15,8 @@ function tasks_post_type() {
 	$labels = array(
 		'name'                  => _x( 'Tasks', 'Post Type General Name', 'taskbook' ),
 		'singular_name'         => _x( 'Task', 'Post Type Singular Name', 'taskbook' ),
-		'menu_name'             => __( 'Post Types', 'taskbook' ),
-		'name_admin_bar'        => __( 'Post Type', 'taskbook' ),
+		'menu_name'             => __( 'Tasks', 'taskbook' ),
+		'name_admin_bar'        => __( 'Task', 'taskbook' ),
 		'archives'              => __( 'Item Archives', 'taskbook' ),
 		'attributes'            => __( 'Item Attributes', 'taskbook' ),
 		'parent_item_colon'     => __( 'Parent Item:', 'taskbook' ),
@@ -63,11 +63,12 @@ function tasks_post_type() {
 		'has_archive'           => true,
 		'exclude_from_search'   => true,
 		'publicly_queryable'    => false,
-		'query_var'             => 'post_type',
+		'query_var'             => true,
 		'rewrite'               => $rewrite,
-		'capability_type'       => 'post',
+		'capability_type'       => 'task',
 		'show_in_rest'          => true,
 		'rest_base'             => 'tasks',
+        'map_meta_cap'          => true
 	);
 	register_post_type( 'tasks', $args );
 
