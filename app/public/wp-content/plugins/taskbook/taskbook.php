@@ -38,14 +38,15 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/roles.php';
 register_activation_hook( __FILE__, 'taskbook_register_role' );
 register_deactivation_hook( __FILE__, 'taskbook_remove_role' );
 
+/**
+ * Add capabilities.
+ */
+register_activation_hook( __FILE__, 'taskbook_add_capabilities' );
+register_deactivation_hook( __FILE__, 'taskbook_remove_capabilities' );
+
 
 /**
  * Register task_status field.
  */
 require_once plugin_dir_path( __FILE__ ) . 'includes/status.php';
 
-/**
- * Add capabilities.
- */
-register_activation_hook( __FILE__, 'taskbook_add_capabilities' );
-register_deactivation_hook( __FILE__, 'taskbook_remove_capabilities' );
