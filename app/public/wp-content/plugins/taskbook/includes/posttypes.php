@@ -50,7 +50,7 @@ function tasks_post_type() {
 	$args = array(
 		'label'                 => __( 'Task', 'taskbook' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'custom-fields' ),
+		'supports'              => array( 'title', 'editor', 'author' ),
 		'hierarchical'          => false,
 		'public'                => false,
 		'show_ui'               => true,
@@ -70,10 +70,10 @@ function tasks_post_type() {
 		'rest_base'             => 'tasks',
         'map_meta_cap'          => true
 	);
-	register_post_type( 'tasks', $args );
+	register_post_type( 'task', $args );
 
 }
-add_action( 'init', 'tasks_post_type', 0 );
+add_action( 'init', 'tasks_post_type' );
 
 function taskbook_rewrite_flush() {
     // First, we "add" the custom post type via the above written function.
