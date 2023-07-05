@@ -21,7 +21,7 @@ function taskbook_change_status( $post, $request ) {
 }
 
 
-add_action( 'rest_api_init', 'taskbook_register_task_status' );
+//add_action( 'rest_api_init', 'taskbook_register_task_status' );
  
 function taskbook_register_task_status() {
  

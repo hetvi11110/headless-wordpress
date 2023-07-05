@@ -126,7 +126,8 @@ function taskbook_register_rest_api_box() {
 
     $cmb_rest->add_field( array(
 		'name' => esc_html__( 'Task Status', 'taskbook' ),
-		'id'   => 'taskbook_task_status',
+		'id'   => 'task_status',
+		'type' => '',
 		'render_row_cb' => 'taskbook_status_cb',
 	) );
 
